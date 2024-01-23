@@ -10,12 +10,11 @@
             <h1 style="margin-left: 14.7rem;">SEPRO</h1>
             <br>
             <v-form>
-              <v-text-field label="Username" placeholder="correo@ventasdiamond.com" counter maxLength="70" color="indigo"
-                clearable prepend-inner-icon="mdi-user" v-model="usuario.username">
-
+              <v-text-field label="Username" placeholder="Introduzca su nombre de usuario" counter maxLength="70"
+                color="indigo" clearable prepend-inner-icon="mdi-account" v-model="usuario.username">
               </v-text-field>
-              <v-text-field label="Contraseña" placeholder="*********" counter maxLength="15" color="indigo" clearable
-                prepend-inner-icon="mdi-key" v-model="usuario.password">
+              <v-text-field label="Contraseña" :type="visible ? 'text' : 'password'" counter maxLength="15" color="indigo"
+                clearable prepend-inner-icon="mdi-key" v-model="usuario.password" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'">
               </v-text-field>
               <v-btn color="indigo" block @click="login">
                 Iniciar sesi&oacute;n
